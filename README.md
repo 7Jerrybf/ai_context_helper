@@ -1,99 +1,92 @@
 # AI Context Helper
 
-**AI Context Helper** is a premium, modern Chrome Extension that allows you to instantly get AI-powered insights and explanations for any text you select on the web.
+**AI Context Helper** 是一個瀏覽器擴充功能，讓您可以選取網頁上的文字，並透過 AI 獲得即時的解釋與上下文資訊。
 
-Built with a focus on **design aesthetics** and **user experience**, it features a beautiful "Bubble" interface, gradient themes, and smooth animations.
+## ✨ 功能特點
 
-## ✨ Features
-
--   **👆 Select & Ask**: Simply select any text on a webpage and click the "Ask AI" floating button.
--   **🎨 Premium UI**:
-    -   **Bubble Design**: A modern, rounded interface that floats elegantly over content.
-    -   **Gradient Themes**: Stunning Indigo-Purple-Pink gradients for a polished look.
-    -   **Animations**: Smooth fade-ins, hover effects, and loading states.
--   **📝 Markdown Support**: Full rendering of bold text, lists, code blocks, and more in the AI response.
--   **🤖 Model Agnostic**: Works with any OpenAI-compatible API.
-    -   **Google Gemini** (Recommended for free tier)
+-   **選取即問**：選取網頁上的任意文字，點擊浮動按鈕即可詢問 AI。
+-   **Markdown 支援**：AI 回覆支援粗體、列表、程式碼區塊等格式渲染。
+-   **模型通用**：支援任何相容 OpenAI 介面的 API。
+    -   **Google Gemini** (推薦使用免費方案)
     -   **OpenAI** (GPT-3.5/4)
-    -   **Local LLMs** (Ollama, LocalAI)
--   **⚡ Fast & Lightweight**: Built with Vite and React for optimal performance.
+    -   **本地 LLM** (Ollama, LocalAI)
+-   **輕量快速**：基於 Vite 和 React 構建，效能優異。
 
-## 🛠️ Tech Stack
+## 🛠️ 技術棧
 
--   **Framework**: [React 19](https://react.dev/)
--   **Build Tool**: [Vite](https://vitejs.dev/)
--   **Language**: [TypeScript](https://www.typescriptlang.org/)
--   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
--   **Platform**: Chrome Extension (Manifest V3)
+-   **框架**: [React 19](https://react.dev/)
+-   **建置工具**: [Vite](https://vitejs.dev/)
+-   **語言**: [TypeScript](https://www.typescriptlang.org/)
+-   **樣式**: [Tailwind CSS v4](https://tailwindcss.com/)
+-   **平台**: Chrome Extension (Manifest V3)
 
-## 🚀 Installation
+## 🚀 安裝說明
 
-1.  **Clone the repository**
+1.  **Clone 專案**
     ```bash
     git clone https://github.com/yourusername/ai-context-helper.git
     cd ai-context-helper
     ```
 
-2.  **Install dependencies**
+2.  **安裝依賴**
     ```bash
     npm install
     ```
 
-3.  **Build the extension**
+3.  **建置擴充功能**
     ```bash
     npm run build
     ```
-    This will generate a `dist` folder containing the compiled extension.
+    此指令會產生一個 `dist` 資料夾，包含編譯後的擴充功能檔案。
 
-4.  **Load into Chrome**
-    -   Open Chrome and navigate to `chrome://extensions/`.
-    -   Enable **Developer mode** (top right toggle).
-    -   Click **Load unpacked**.
-    -   Select the `dist` folder from your project directory.
+4.  **載入至 Chrome**
+    -   開啟 Chrome 並前往 `chrome://extensions/`。
+    -   開啟右上角的 **開發人員模式 (Developer mode)**。
+    -   點擊 **載入未封裝項目 (Load unpacked)**。
+    -   選擇專案目錄下的 `dist` 資料夾。
 
-## ⚙️ Configuration
+## ⚙️ 設定指南
 
-Upon installation, the **Settings Page** will automatically open. You can also access it by clicking the extension icon and selecting "Options".
+安裝完成後，**設定頁面**會自動開啟。您也可以點擊擴充功能圖示並選擇「選項 (Options)」來進入。
 
-### Recommended Setup (Google Gemini)
+### 推薦設定 (Google Gemini)
 
-Google provides a free tier for their Gemini API which is OpenAI-compatible.
+Google 提供免費且相容 OpenAI 介面的 Gemini API。
 
-1.  **Get API Key**: Visit [Google AI Studio](https://aistudio.google.com/app/apikey) to get your key.
-2.  **Provider**: Select `OpenAI Compatible`.
+1.  **取得 API Key**: 前往 [Google AI Studio](https://aistudio.google.com/app/apikey) 申請。
+2.  **Provider**: 選擇 `OpenAI Compatible`。
 3.  **Base URL**:
     ```
     https://generativelanguage.googleapis.com/v1beta/openai/
     ```
-4.  **API Key**: Paste your Google API Key.
+4.  **API Key**: 貼上您的 Google API Key。
 5.  **Model Name**:
     ```
-    gemini-1.5-flash
+    gemini-2.5-flash
     ```
-    *(Or `gemini-1.5-pro` / `gemini-2.0-flash` depending on availability)*
+  
 
-### Setup for OpenAI
+### OpenAI 設定
 
-1.  **Base URL**: Leave blank or use `https://api.openai.com/v1`
-2.  **API Key**: Your OpenAI API Key.
-3.  **Model Name**: `gpt-3.5-turbo` or `gpt-4`.
+1.  **Base URL**: 留空或使用 `https://api.openai.com/v1`
+2.  **API Key**: 您的 OpenAI API Key。
+3.  **Model Name**: `gpt-3.5-turbo` 或 `gpt-4`。
 
-## 💻 Development
+## 💻 開發指南
 
-To make changes and test them:
+若要修改程式碼並測試：
 
-1.  Run the build command in watch mode (optional, or just rebuild manually):
+1.  執行建置指令：
     ```bash
     npm run build
     ```
-    *Note: Since this is a browser extension, hot module replacement (HMR) is limited. It's often easier to rebuild and reload the extension in Chrome.*
 
-2.  **Reloading in Chrome**:
-    -   Go to `chrome://extensions/`.
-    -   Find "AI Context Helper".
-    -   Click the **Refresh** (circular arrow) icon.
-    -   Refresh the web page you are testing on.
+2.  **在 Chrome 中重新載入**:
+    -   前往 `chrome://extensions/`。
+    -   找到 "AI Context Helper"。
+    -   點擊 **重新整理** (旋轉箭頭圖示)。
+    -   重新整理您正在測試的網頁。
 
-## 📄 License
+## 📄 授權
 
 MIT License
